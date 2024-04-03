@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+
+
+
+        document.write('<b>練習1.</b>想想看怎麼從 0 到 100 隨機取一個整數?<br><br>')
+        for (let i = 0; i <= 20; i++) {
+            console.log(Math.floor(Math.random() * (100 + 1)))
+            document.write(`${Math.floor(Math.random() * (100 + 1))}<br>`)
+        }
+
+
+
+        document.write('<hr>')
+
+
+
+        document.write('<b>練習2.</b>製作隨機數字 function，提供最小整數和最大整數，回傳一個區間內的隨機整數<br><br>')
+
+        let min = 10
+        let max = 50
+        let x = 3 // 次數
+
+        const rand = (min, max) => {
+            return (Math.floor(Math.random() * (max - min + 1)) + min)
+        }
+
+        let arry = []
+        for (i = 1; i <= 3; i++) {
+            arry.push(rand(min, max))
+            console.log(arry)
+        }
+
+        document.write(`Min=${min} ; Max=${max}<br>區間內的隨機${x}個整數：${arry}`)
+
+
+
+        document.write('<hr>')
+
+
+
+        document.write(`<b>練習3.</b>製作威力彩號碼產生器 <br><br>`)
+
+        const lottery = (min, max) => {
+            return (Math.floor(Math.random() * (max - min + 1)) + min)
+        }
+
+        let ARang = []
+        while (ARang.length < 6) {
+            let A = lottery(1, 38)
+            let check = ARang.includes(A)
+            if (check == false) {
+                ARang.push(A)
+            } else {
+                continue
+            }
+        }
+
+
+        let BRang = []
+        while (BRang.length < 1) {
+            let B = lottery(1, 8)
+            let check = BRang.includes(B)
+            if (check == false) {
+                BRang.push(B)
+            } else {
+                continue
+            }
+        }
+
+
+        document.write(`★★★威力彩開獎★★★<br>A區：${ARang}<br>B區：${BRang}<br>`)
+
+
+
+    </script>
+
+</body>
+
+</html>
